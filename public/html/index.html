@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>上传文件</title>
+    <style type="text/css">
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    #radio {
+        margin: 10px;
+    }
+    </style>
+
+    <script type="text/javascript">
+    function validate(form) {
+    	var input = document.querySelector('input[name="member"]:checked');
+    	if (input == null){
+    		alert('请选择用户');
+    		return false;
+    	}else{
+    		return true;
+    	}
+    }
+    </script>
+</head>
+
+<body>
+    <form action="/upload" enctype="multipart/form-data" method="post" onsubmit="return validate(this);">
+        <span>version:</span>
+        <input type="text" name="version">
+        <br>
+        <input type="file" name="upload" multiple="multiple">
+        <br>
+        <div id="radio">
+            <input type="radio" name="member" value="chun">春荣
+            <br>
+            <input type="radio" name="member" value="zhe">浙儿
+            <br>
+            <input type="radio" name="member" value="shao">少能
+            <br>
+            <input type="radio" name="member" value="qun">群辉
+            <br>
+            <input type="radio" name="member" value="rong">容铨
+            <br>
+        </div>
+        <input type="submit" value="Upload" >
+    </form>
+</body>
+
+</html>
